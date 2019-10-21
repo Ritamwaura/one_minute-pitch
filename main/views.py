@@ -20,3 +20,12 @@ def index():
 @main.route('/pitches',methods = ['GET','POST'])
 @login_required
 def new_pitch():
+    name = "Pitch"
+    title = 'Welcome,Pitch your one-minute pitch!'
+    form = PitchForm()
+    
+    
+    
+    
+    
+    
