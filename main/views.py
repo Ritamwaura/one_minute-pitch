@@ -34,6 +34,24 @@ def new_pitch():
         
         db.session.add(new_pitch)
         db.session.commit()
+        
+        
+        # new_pitch.save_pitch()
+        return redirect(url_for('main.post_pitch'))
+
+
+    return render_template('post.html',title = title, name=name, pitch_form =form)
+
+
+@main.route('/posts')
+@login_required
+def post_pitch():
+    
+     pitches = Pitch.query.all()
+    return render_template('new_pitch.html',pitches = pitches)
+
+
+
 
     
     
