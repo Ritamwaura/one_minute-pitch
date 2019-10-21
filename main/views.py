@@ -16,3 +16,7 @@ def index():
     title = 'Home'
     return render_template('index.html', title = title)
 
+
+@main.route('/pitches',methods = ['GET','POST'])
+@login_required
+def new_pitch():
