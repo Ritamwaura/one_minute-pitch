@@ -11,3 +11,8 @@ def index():
     '''
     view root page function that returns index page
     '''
+    # category = Category.get_categories()
+
+    title = 'Home'
+    return render_template('index.html', title = title)
+
