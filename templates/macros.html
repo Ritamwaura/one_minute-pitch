@@ -4,4 +4,13 @@
         <h3>{{category.name}}</h3>
     </a>
 </li>
-{% endfor %} {% endmacro %}
+{% endfor %} {% endmacro %} % macro displayPitches(pitch_list) %} {% for pitch in pitch_list %}
+<div class="well col-xs-12 col-sm-4 col-md-4 col-lg-4 pitch-card">
+    <div class="row avatar-row">
+        <div class="col-md-2 col-lg-2" id="avatar-column">
+            <img id="avatar" src="/static/img/avatar.png" alt="Avatar">
+        </div>
+        <div class="col-md-8 col-lg-8">
+            <h4>{{pitch.user.username}}</h4>
+            <p>Posted on {{pitch.time}}</p>
+        </div>
