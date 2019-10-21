@@ -16,4 +16,3 @@ class ReviewForm(FlaskForm):
     category = SelectField('Category', choices=[('Production','Production'),('Movie','Movie'),('Job','Job'),('Promotion','Promotion'),('Sales','Sales'),('Advertisement','Advertisement')],validators=[Required()])
     submit = SubmitField('Type / Copy and Paste Your Pitch Here')
 
-# class CommentFor
