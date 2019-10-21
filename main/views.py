@@ -51,6 +51,10 @@ def post_pitch():
     return render_template('new_pitch.html',pitches = pitches)
 
 
+@main.route('/reviews/<id>',methods = ['GET', 'POST'])
+def post_review(id):
+    pitch = Pitch.query.filter_by(id=id).first()
+    
 
 
     
