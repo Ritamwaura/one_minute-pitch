@@ -24,6 +24,18 @@ def new_pitch():
     title = 'Welcome,Pitch your one-minute pitch!'
     form = PitchForm()
     
+    if form.validate_on_submit():
+        
+        title=form.title.data
+        post=form.pitch.data
+        # upvote=0
+        # downvote=0
+        new_pitch = Pitch(title=title, post=post)
+        
+        db.session.add(new_pitch)
+        db.session.commit()
+
+    
     
     
     
