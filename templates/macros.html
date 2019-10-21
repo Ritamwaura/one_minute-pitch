@@ -14,3 +14,12 @@
             <h4>{{pitch.user.username}}</h4>
             <p>Posted on {{pitch.time}}</p>
         </div>
+    </div>
+    <hr>
+    <div class="row pitch-content">
+        <h4><b>{{pitch.title}}</b></h4>
+        <p>{{pitch.post}}</p>
+    </div>
+    <a href="/pitch/reviews/{{pitch.id}}">View Reviews</a>
+</div>
+{% endfor %} {% endmacro %}
