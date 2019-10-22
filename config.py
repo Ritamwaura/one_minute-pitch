@@ -33,5 +33,13 @@ class config:
         SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Rita:123@localhost/pitch'
         # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
         DEBUG = True
+        
+        
+        
+   config_options = {
+        'development': DevConfig,
+        'production': ProdConfig,
+        'test': TestConfig
+}
     
 
