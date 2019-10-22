@@ -12,3 +12,13 @@ class config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
+    @staticmethod
+    def init_app(app):
+        pass
+    
+    
+    class Prodconfig(config):
+        SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://Rita:123@localhost/pitch'
+        
+        
+        DEBUG = True
