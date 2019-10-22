@@ -1,0 +1,6 @@
+export SECRET_KEY='<Flask WTF Secret Key>'
+export MAIL_USERNAME='mwaurarita@gmail.com'
+export MAIL_PASSWORD='britney3755'
+# export SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://Rita:123@localhost/pitch'
+
+python3.7 manage.py server
