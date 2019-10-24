@@ -18,6 +18,7 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(255))   
     pitches =  db.relationship('Pitch', backref = 'user', lazy = "dynamic")
     reviews = db.relationship('Review', backref = 'user', lazy = "dynamic")
+    role = db.relationship('Role',backref='user' ,lazy="dynamic")
 
     @property
     def password(self):
@@ -30,8 +31,8 @@ class User(UserMixin, db.Model):
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-    def __repr__(self):
-        return f'User {self.username}'
+    # def __repr__(self):
+    #     return f'User {self.username}'
 
 
 class Pitch(db.Model):
@@ -61,11 +62,10 @@ class Role(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(255))
-    users = db.relationship('User', backref = 'role', lazy = "dynamic")
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
-    def __repr__(self):
-        return f'User {self.name}'
+    # def __repr__(self):
+    #     return f'User {self.name}'
 
 
 class Review(db.Model):

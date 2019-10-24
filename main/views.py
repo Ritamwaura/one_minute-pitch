@@ -1,4 +1,4 @@
-rom flask import render_template,request,redirect,url_for,abort
+from flask import render_template,request,redirect,url_for,abort
 from . import main
 from .forms import ReviewForm,UpdateProfile,PitchForm
 from ..models import Review,User,Pitch
@@ -46,8 +46,7 @@ def new_pitch():
 @main.route('/posts')
 @login_required
 def post_pitch():
-    
-     pitches = Pitch.query.all()
+    pitches = Pitch.query.all()
     return render_template('new_pitch.html',pitches = pitches)
 
 
@@ -105,7 +104,7 @@ def update_pic(uname):
     user = User.query.filter_by(username = uname).first()
     if 'photo' in request.files:
         filename = photos.save(request.files['photo'])
-        path = f'photos/{filename}'
+        path = 'photos/{}'.format(filename)
         print(path)
         user.profile_pic_path = path
         db.session.commit()
